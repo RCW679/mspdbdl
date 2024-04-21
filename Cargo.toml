@@ -1,0 +1,27 @@
+[package]
+name = "mspdbdl"
+version = "0.1.0"
+edition = "2021"
+
+[dependencies]
+exe = "0.5.6"
+glob = "0.3.1"
+hex = "0.4.3"
+pkbuffer = "0.4.2"
+[dependencies.reqwest]
+version = "0.11.23"
+features = ["blocking"]
+[build-dependencies]
+winresource = "0.1"
+toml = "0.7.8"
+[package.metadata.winresource]
+OriginalFilename = "mspdbdl.exe"
+ProductVersion = "1.0.0.0"
+ProductName = "MS PDB Download Tool"
+FileDescription = "MS PDB Download Tool"
+[profile.release]
+opt-level = 's'
+lto = true
+codegen-units = 1
+panic = 'abort'
+strip = true
